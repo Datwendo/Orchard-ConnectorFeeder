@@ -1,0 +1,17 @@
+﻿@using Datwendo.ConnectorFeeder.Models
+@using Datwendo.ConnectorFeeder.ViewModels
+@using Orchard.Utility.Extensions
+
+@model Datwendo.ConnectorFeeder.ViewModels.ConnectorFeederPartViewModel
+
+<fieldset>
+    <legend>@T("Connector Feeder")</legend>
+    <div>
+    @Html.LabelFor(model => model.PublisherId,T("Publisher Id"))
+         @Html.TextBoxFor(model => model.PublisherId, new { disabled = "disabled" })   
+    </div>
+    <div>
+    @Html.LabelFor(model => model.DataReceived)
+    @Html.TextBoxFor(model => model.DataReceived, new { disabled = "disabled" })   
+    </div>
+</fieldset>

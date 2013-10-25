@@ -1,0 +1,37 @@
+﻿@model Datwendo.ConnectorFeeder.Settings.ConnectorFeederSettings
+@using Orchard.Utility.Extensions
+@using Datwendo.ConnectorFeeder.Settings
+
+@{
+    Style.Require("ConnectorFeederSettings");
+}
+ 
+<fieldset>
+    <div>
+        @Html.CheckBoxFor(m => m.KeepDataCopy)
+        <label class="forcheckbox" for="@Html.FieldIdFor(m => m.KeepDataCopy)">@T("Keep a copy of Data")</label>
+        <span class="hint">@T("Check to keep a copy of data sent with connector request")</span>
+    </div>
+</fieldset>   
+<fieldset>
+    <div>
+        @Html.LabelFor(m => m.PartName, @T("Part Name"))
+        @Html.DropDownListFor(m => m.PartName, new SelectList(Model.AllParts, "Name", "DisplayName", Model.PartName), new {@class="partname" })
+        <span class="hint">@T("The Part to collect data from (must be attached to the same component a this connector")</span>
+    </div>
+</fieldset>
+<fieldset>
+    <div>
+        @Html.LabelFor(m => m.PropertyName, @T("Property Name"))
+        @Html.DropDownListFor(m => m.PropertyName, new SelectList(Model.AllProperties, Model.PropertyName), new {@class="propertyname" })
+        <span class="hint">@T("The property to use to collect data from the previously selected Part")</span>
+    </div>
+</fieldset>
+<fieldset>
+    <div>
+        @Html.LabelFor(m => m.FieldName, @T("Field Name"))
+        @Html.DropDownListFor(m => m.FieldName, new SelectList(Model.AllFields, "Name", "DisplayName", Model.FieldName), new {@class="fieldname" })
+        <span class="hint">@T("The Field to use to collect data from the previously selected Part")</span>
+    </div>
+</fieldset>
+@Display.TokenHint()

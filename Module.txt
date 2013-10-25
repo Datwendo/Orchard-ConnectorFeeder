@@ -1,0 +1,13 @@
+﻿Name: Datwendo Connector Feeder
+AntiForgery: enabled
+Author: Christian Surieux
+Website: http://www.datwendo.com
+Version: 1.0
+OrchardVersion: 1.7
+Description: Feeder Client for Datwendo Cloud Connector
+Features:
+    Datwendo.ConnectorFeeder:
+	    Name: Datwendo Connector Feeder
+		Description: Feeder Client for Datwendo Cloud Connector.
+	    Category: Developer
+		Dependencies: Orchard.ContentTypes, Orchard.Workflows, Datwendo.ClientConnector, Datwendo.ConnectorListener, Datwendo.ContentHelpers

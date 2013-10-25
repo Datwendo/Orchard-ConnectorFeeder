@@ -1,0 +1,13 @@
+﻿@model Datwendo.ConnectorFeeder.ViewModels.ConnectorFeederPartEditViewModel
+@using Datwendo.ConnectorFeeder
+@using Orchard.Utility.Extensions;
+
+@if(string.IsNullOrEmpty(Model.Settings.PartName)) {
+    <div class="message message-Error">@T("The current Content Type does not have a Part. Please edit the settings first.")</div>
+    return;
+}
+@if(string.IsNullOrEmpty(Model.Settings.PropertyName)) {
+    <div class="message message-Error">@T("The current Content Type does not have a Property. Please edit the settings first.")</div>
+    return;
+}
+

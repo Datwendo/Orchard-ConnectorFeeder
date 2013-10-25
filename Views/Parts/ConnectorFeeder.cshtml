@@ -1,0 +1,10 @@
+﻿@model dynamic
+
+@using Datwendo.ConnectorFeeder.Models
+@using Orchard.ContentManagement
+
+@{
+    var mdl = ((IContent)Model.ContentPart).As<ConnectorFeederPart>();
+}
+
+@mdl.PublisherId - @T("Has Content: {0}",!string.IsNullOrEmpty(mdl.DataReceived))

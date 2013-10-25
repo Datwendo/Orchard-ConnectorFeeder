@@ -1,0 +1,19 @@
+﻿.connectorfeeder-settings-default {
+    width: 5%;
+}
+.connectorfeeder-settings-name {
+    width: 20%
+}
+
+.connectorfeeder-settings-pat {
+    width: 30%
+}
+
+.connectorfeeder-settings-desc {
+    width: 40%
+}
+
+.connectorfeeder-settings-actions {
+    width: 10%;
+    text-align: right;
+}
