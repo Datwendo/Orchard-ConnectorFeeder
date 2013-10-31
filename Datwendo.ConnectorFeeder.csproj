@@ -140,6 +140,10 @@
   <ItemGroup>
     <Content Include="Views\EditorTemplates\Parts.ConnectorFeeder.Edit.cshtml" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="License.md" />
+    <Content Include="README.md" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

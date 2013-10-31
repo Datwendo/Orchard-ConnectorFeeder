@@ -21,7 +21,7 @@ namespace Datwendo.ConnectorFeeder {
             ContentDefinitionManager.AlterPartDefinition("ConnectorFeederPart",
                 builder => builder.Attachable());
 
-            return 1;
+            return 2;
         }
 
         public int UpdateFrom1()

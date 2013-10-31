@@ -39,7 +39,7 @@ namespace Datwendo.ConnectorFeeder.Settings
                 .Where(c => /*c.Name.EndsWith("part",StringComparison.InvariantCultureIgnoreCase) && */ !ForbidenParts.Contains(c.Name) && c.Settings.GetModel<ContentPartSettings>().Attachable)
                 .Select(c => new { Name = c.Name, DisplayName = c.Name.TrimEnd("Part").CamelFriendly()}).OrderBy(c => c.DisplayName); 
         }
-
+        [Obsolete("Use TypePartEditorEx")]
         public override IEnumerable<TemplateViewModel> TypePartEditor(ContentTypePartDefinition definition)
         {
             if (definition.PartDefinition.Name != "ConnectorFeederPart")
