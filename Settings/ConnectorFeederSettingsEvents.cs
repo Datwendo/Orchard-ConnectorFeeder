@@ -39,22 +39,12 @@ namespace Datwendo.ConnectorFeeder.Settings
                 .Where(c => /*c.Name.EndsWith("part",StringComparison.InvariantCultureIgnoreCase) && */ !ForbidenParts.Contains(c.Name) && c.Settings.GetModel<ContentPartSettings>().Attachable)
                 .Select(c => new { Name = c.Name, DisplayName = c.Name.TrimEnd("Part").CamelFriendly()}).OrderBy(c => c.DisplayName); 
         }
-        [Obsolete("Use TypePartEditorEx")]
+
         public override IEnumerable<TemplateViewModel> TypePartEditor(ContentTypePartDefinition definition)
         {
             if (definition.PartDefinition.Name != "ConnectorFeederPart")
                 yield break;
-
-            var settings        = definition.Settings.GetModel<ConnectorFeederSettings>();
-            settings.AllParts   = GetParts();
-            yield return DefinitionTemplate(settings);
-        }
-
-        public override IEnumerable<TemplateViewModel> TypePartEditorEx(ContentTypeDefinition contentTypeDefinition, ContentTypePartDefinition definition)
-        {
-            if (definition.PartDefinition.Name != "ConnectorFeederPart")
-                yield break;
-
+            ContentTypeDefinition contentTypeDefinition = definition.ContentTypeDefinition;
             var settings                = definition.Settings.GetModel<ConnectorFeederSettings>(); 
             settings.contentItemName    = contentTypeDefinition.Name;
             ContentPartDefinition ct    = _contentDefinitionManager.GetPartDefinition(contentTypeDefinition.Name);
